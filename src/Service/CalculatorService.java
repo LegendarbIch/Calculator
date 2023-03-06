@@ -11,7 +11,7 @@ public class CalculatorService {
     public Double calculations(ArrayList<String> numbers, ArrayList<String> signs){
         ArrayList<Integer> iOfOpBr = new ArrayList<>(extractIndexOfOpeningBrackets(signs));
         ArrayList<Integer> iOfClBr = new ArrayList<>(extractIndexOfClosingBrackets(signs));
-        for (int i = iOfOpBr.get(iOfOpBr.size()-1); i < iOfClBr.get(iOfClBr.size()-1) ; i++) {
+        for (int i = iOfOpBr.get(iOfOpBr.size()-1); i < iOfClBr.get(0) ; i++) {
 
         }
         return 0.0;

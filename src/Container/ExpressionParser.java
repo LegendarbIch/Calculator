@@ -24,11 +24,13 @@ public class ExpressionParser implements Parser{
         }
     }
     public void appendNumber(ArrayList<String> digit) {
-        StringBuilder s = new StringBuilder();
-        for (int j = 0; j < digit.size(); j++) {
-            s.append(digit.get(j));
+        if (!digit.isEmpty()) {
+            StringBuilder s = new StringBuilder();
+            for (int j = 0; j < digit.size(); j++) {
+                s.append(digit.get(j));
+            }
+            numbers.add(s.toString());
         }
-        numbers.add(s.toString());
     }
     public ArrayList<String> getNumbers() {
         return numbers;

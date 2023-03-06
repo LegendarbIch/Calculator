@@ -4,21 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="707ce0d8-4989-4768-9d71-07b4185471e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Calculator.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/ExpressionParser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Container/Parser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/Calculator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/MathematicsOperations.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Service/CalculatorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/View/Menu.java" afterDir="false" />
+    <list default="true" id="707ce0d8-4989-4768-9d71-07b4185471e7" name="Changes" comment=" new">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Container/ExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/ExpressionParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/CalculatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CalculatorService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,11 +58,23 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1678114528550</updated>
-      <workItem from="1678114529827" duration="15056000" />
+      <workItem from="1678114529827" duration="17045000" />
     </task>
+    <task id="LOCAL-00001" summary=" new">
+      <created>1678131272331</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1678131272331</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value=" new" />
+    <option name="LAST_COMMIT_MESSAGE" value=" new" />
   </component>
 </project>
