@@ -6,15 +6,29 @@ import Model.Calculator;
 import java.util.ArrayList;
 
 public class CalculatorService {
-    private ExpressionParser parser = new ExpressionParser();
+    private ExpressionParser parser = ExpressionParser.getInstance();
     private Calculator calculator = new Calculator();
-    public Double calculations(ArrayList<String> numbers, ArrayList<String> signs){
+    public void calculations(ArrayList<String> numbers, ArrayList<String> signs){
         ArrayList<Integer> iOfOpBr = new ArrayList<>(extractIndexOfOpeningBrackets(signs));
         ArrayList<Integer> iOfClBr = new ArrayList<>(extractIndexOfClosingBrackets(signs));
-        for (int i = iOfOpBr.get(iOfOpBr.size()-1); i < iOfClBr.get(0) ; i++) {
-
+        for (int i = iOfOpBr.get(iOfOpBr.size()-1)+1; i < iOfClBr.get(0)-1 ; i++) {
+            if(signs.get(i).equals("/")){
+                double a = Double.parseDouble(numbers.get(i - 1));
+                double b = Double.parseDouble(numbers.get(i));
+                numbers.set(i-1, String.valueOf(calculator.Div(a,b)));
+                numbers.remove(i);
+                break;
+            }
         }
-        return 0.0;
+        for (int i = iOfOpBr.get(iOfOpBr.size()-1)+1; i < iOfClBr.get(0)-1 ; i++) {
+            if(signs.get(i).equals("*")){
+                double a = Double.parseDouble(numbers.get(i - 1));
+                double b = Double.parseDouble(numbers.get(i));
+                numbers.set(i-1, String.valueOf(calculator.Multiple(a,b)));
+                numbers.remove(i);
+                break;
+            }
+        }
     }
 
     private ArrayList<Integer> extractIndexOfOpeningBrackets(ArrayList<String> signs) {

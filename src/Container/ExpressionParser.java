@@ -3,8 +3,19 @@ package Container;
 import java.util.ArrayList;
 
 public class ExpressionParser implements Parser{
-    private ArrayList<String> numbers = new ArrayList<>();
-    private ArrayList<String> operationSymbols = new ArrayList<>();
+    private final ArrayList<String> numbers = new ArrayList<>();
+    private final ArrayList<String> operationSymbols = new ArrayList<>();
+
+    private static ExpressionParser instance;
+    public static synchronized ExpressionParser getInstance() {
+        if (instance == null) {
+            instance = new ExpressionParser();
+        }
+        return instance;
+    }
+    private ExpressionParser() {
+
+    }
     @Override
     public void parseString(String str) {
         ArrayList<String> digit = new ArrayList<>();
