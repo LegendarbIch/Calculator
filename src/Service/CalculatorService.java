@@ -7,27 +7,47 @@ import java.util.ArrayList;
 
 public class CalculatorService {
     private ExpressionParser parser = ExpressionParser.getInstance();
+
+    private static CalculatorService instance;
+    public static synchronized CalculatorService getInstance() {
+        if (instance == null) {
+            instance = new CalculatorService();
+        }
+        return instance;
+    }
+    private CalculatorService() {
+
+    }
     private Calculator calculator = new Calculator();
     public void calculations(ArrayList<String> numbers, ArrayList<String> signs){
         ArrayList<Integer> iOfOpBr = new ArrayList<>(extractIndexOfOpeningBrackets(signs));
         ArrayList<Integer> iOfClBr = new ArrayList<>(extractIndexOfClosingBrackets(signs));
-        for (int i = iOfOpBr.get(iOfOpBr.size()-1)+1; i < iOfClBr.get(0)-1 ; i++) {
-            if(signs.get(i).equals("/")){
-                double a = Double.parseDouble(numbers.get(i - 1));
-                double b = Double.parseDouble(numbers.get(i));
-                numbers.set(i-1, String.valueOf(calculator.Div(a,b)));
-                numbers.remove(i);
-                break;
+        while(iOfOpBr.size() != 0 || iOfClBr.size() != 0) {
+            for (int i = iOfOpBr.get(iOfOpBr.size() - 1) + 1; i < iOfClBr.get(0); i++) {
+                if (signs.get(i).equals("/")) {
+                    double a = Double.parseDouble(numbers.get(i - 1));
+                    double b = Double.parseDouble(numbers.get(i));
+                    numbers.set(i - 1, String.valueOf(calculator.Div(a, b)));
+                    numbers.remove(i);
+                    signs.remove(i);
+                    break;
+                }
             }
-        }
-        for (int i = iOfOpBr.get(iOfOpBr.size()-1)+1; i < iOfClBr.get(0)-1 ; i++) {
-            if(signs.get(i).equals("*")){
-                double a = Double.parseDouble(numbers.get(i - 1));
-                double b = Double.parseDouble(numbers.get(i));
-                numbers.set(i-1, String.valueOf(calculator.Multiple(a,b)));
-                numbers.remove(i);
-                break;
+            for (int i = iOfOpBr.get(iOfOpBr.size() - 1) + 1; i < iOfClBr.get(0); i++) {
+                if (signs.get(i).equals("*")) {
+                    double a = Double.parseDouble(numbers.get(i - 1));
+                    double b = Double.parseDouble(numbers.get(i));
+                    numbers.set(i - 1, String.valueOf(calculator.Multiple(a, b)));
+                    numbers.remove(i);
+                    signs.remove(i);
+                    break;
+                }
             }
+            signs.remove(String.valueOf(iOfOpBr.get(iOfOpBr.size()-1)));
+            signs.remove(String.valueOf(iOfOpBr.get(0)));
+            iOfOpBr.remove(iOfOpBr.size()-1);
+            iOfClBr.remove(0);
+
         }
     }
 

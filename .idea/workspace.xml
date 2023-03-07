@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="707ce0d8-4989-4768-9d71-07b4185471e7" name="Changes" comment=" new">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Container/ExpressionParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Container/ExpressionParser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Service/CalculatorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/CalculatorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/View/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/View/Menu.java" afterDir="false" />
     </list>
@@ -47,6 +46,9 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
@@ -60,6 +62,7 @@
       <option name="presentableId" value="Default" />
       <updated>1678114528550</updated>
       <workItem from="1678114529827" duration="21507000" />
+      <workItem from="1678177232201" duration="4969000" />
     </task>
     <task id="LOCAL-00001" summary=" new">
       <created>1678131272331</created>

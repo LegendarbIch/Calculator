@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 public class Menu {
     Scanner keyboard = new Scanner(System.in);
-    CalculatorService calculatorService = new CalculatorService();
+    CalculatorService calculatorService = CalculatorService.getInstance();
     ExpressionParser expressionParser = ExpressionParser.getInstance();
     public void drawExpression() {
         System.out.println("Введи выражение: ");
