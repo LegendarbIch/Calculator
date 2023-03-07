@@ -30,7 +30,15 @@ public class CalculatorService {
                     numbers.set(i - 1, String.valueOf(calculator.Div(a, b)));
                     numbers.remove(i);
                     signs.remove(i);
-                    break;
+                    continue;
+                }
+                if (signs.get(i).equals("+")) {
+                    double a = Double.parseDouble(numbers.get(i - 1));
+                    double b = Double.parseDouble(numbers.get(i));
+                    numbers.set(i - 1, String.valueOf(calculator.Sum(a, b)));
+                    numbers.remove(i);
+                    signs.remove(i);
+                    continue;
                 }
             }
             for (int i = iOfOpBr.get(iOfOpBr.size() - 1) + 1; i < iOfClBr.get(0); i++) {
@@ -43,8 +51,6 @@ public class CalculatorService {
                     break;
                 }
             }
-            signs.remove(String.valueOf(iOfOpBr.get(iOfOpBr.size()-1)));
-            signs.remove(String.valueOf(iOfOpBr.get(0)));
             iOfOpBr.remove(iOfOpBr.size()-1);
             iOfClBr.remove(0);
 
