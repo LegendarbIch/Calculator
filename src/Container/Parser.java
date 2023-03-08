@@ -1,5 +1,5 @@
 package Container;
 
 public interface Parser {
-    void parseString(String str);
+    String parseString(String str) throws Exception;
 }
