@@ -1,25 +1,10 @@
-package Container;
+package Model.Parser;
 
-import java.util.ArrayList;
-
-public class ExpressionParser implements Parser{
-    private final ArrayList<String> numbers = new ArrayList<>();
-    private final ArrayList<String> operationSymbols = new ArrayList<>();
-
-    private static ExpressionParser instance;
-    public static synchronized ExpressionParser getInstance() {
-        if (instance == null) {
-            instance = new ExpressionParser();
-        }
-        return instance;
-    }
-    private ExpressionParser() {
-
-    }
+public class ExpressionParserService implements Parser {
 
     @Override
     public String parseString(String strExpression) throws Exception {
-        StringBuilder sbStack = new StringBuilder(""), sbOut = new StringBuilder("");
+        StringBuilder sbStack = new StringBuilder(), sbOut = new StringBuilder();
         char symbol, tmpSymbol;
 
         for (int i = 0; i < strExpression.length(); i++) {
@@ -76,41 +61,6 @@ public class ExpressionParser implements Parser{
             case '*', '/', '%' -> 2;
             default -> 1;
         };
-    }
-    @Deprecated
-    public void parseStringInArrays(String str) {
-        ArrayList<String> digit = new ArrayList<>();
-        for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
-            if (Character.isDigit(c)) {
-                digit.add(String.valueOf(c));
-                if (i == str.length()-1) {
-                    appendNumber(digit);
-                }
-            } else {
-                appendNumber(digit);
-                digit.clear();
-                operationSymbols.add(String.valueOf(c));
-            }
-
-        }
-    }
-
-    public void appendNumber(ArrayList<String> digit) {
-        if (!digit.isEmpty()) {
-            StringBuilder s = new StringBuilder();
-            for (int j = 0; j < digit.size(); j++) {
-                s.append(digit.get(j));
-            }
-            numbers.add(s.toString());
-        }
-    }
-    public ArrayList<String> getNumbers() {
-        return numbers;
-    }
-
-    public ArrayList<String> getOperationSymbols() {
-        return operationSymbols;
     }
 
 }
