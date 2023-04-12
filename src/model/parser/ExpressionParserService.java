@@ -1,14 +1,16 @@
-package Model.Parser;
+package model.parser;
 
-public class ExpressionParserService implements Parser {
+import model.Expression;
+
+public class ExpressionParserService implements ExpressionParser {
 
     @Override
-    public String parseString(String strExpression) throws Exception {
+    public Expression parseString(Expression strExpression) throws Exception {
         StringBuilder sbStack = new StringBuilder(), sbOut = new StringBuilder();
         char symbol, tmpSymbol;
 
-        for (int i = 0; i < strExpression.length(); i++) {
-            symbol = strExpression.charAt(i);
+        for (int i = 0; i < strExpression.getExpression().length(); i++) {
+            symbol = strExpression.getExpression().charAt(i);
             if (isOperand(symbol)) {
                 while (sbStack.length() > 0) {
                     tmpSymbol = sbStack.substring(sbStack.length()-1).charAt(0);
@@ -47,7 +49,8 @@ public class ExpressionParserService implements Parser {
             sbStack.setLength(sbStack.length()-1);
         }
 
-        return  sbOut.toString();
+        strExpression.setExpression(sbOut.toString());
+        return strExpression;
     }
     public boolean isOperand(char c) {
         return switch (c) {

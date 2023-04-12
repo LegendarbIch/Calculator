@@ -1,12 +1,14 @@
-package Controller;
+package model.write;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class WriteController {
-    public void WriteToFile(String text){
+public class WriterExpressionService implements Writer{
+
+    @Override
+    public void write(String text) {
         File myFile = new File("file.txt");
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(myFile, true));

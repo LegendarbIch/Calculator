@@ -1,5 +1,5 @@
 
-import View.Menu;
+import view.Menu;
 
 public class Main {
     static Menu menu = new Menu();

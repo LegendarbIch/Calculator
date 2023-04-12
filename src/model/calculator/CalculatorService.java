@@ -1,5 +1,7 @@
-package Model.Calculator;
+package model.calculator;
 
+
+import model.Expression;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
@@ -8,11 +10,11 @@ import java.util.StringTokenizer;
 public class CalculatorService implements Calculator {
 
     @Override
-    public double calculate(String strExpression) throws Exception {
+    public double calculate(Expression strExpression) throws Exception {
         double dA, dB;
         String sTmp;
         Deque<Double> stack = new ArrayDeque<>();
-        StringTokenizer st = new StringTokenizer(strExpression);
+        StringTokenizer st = new StringTokenizer(strExpression.getExpression());
         while(st.hasMoreTokens()) {
             try {
                 sTmp = st.nextToken().trim();
